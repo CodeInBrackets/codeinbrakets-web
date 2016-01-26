@@ -1,5 +1,14 @@
 Chapters = new Mongo.Collection('chapters');
 
+Chapters.allow({
+  insert: function(userId, doc) {
+    return !!userId;
+  },
+  update: function(userId, doc) {
+    return !!userId;
+  }
+});
+
 ExerciseSchema = new SimpleSchema({
     title: {
         type: String,
@@ -40,5 +49,25 @@ ChapterSchema = new SimpleSchema({
         type: VideoSchema,
         label: "Video",
         optional: true
+    },
+    createdAt: {
+        type: Date,
+        label: "Created At",
+        autoValue: function(){
+          return new Date();
+        },
+        autoform:{
+          type: "hidden"
+        }
+    },
+    isPublic: {
+        type: Boolean,
+        defaultValue: true,
+        optional: true,
+        autoform:{
+          type: "hidden"
+        }
     }
 });
+
+Chapters.attachSchema(ChapterSchema);

@@ -1,3 +1,16 @@
 <template name="chapter">
-    <h1>Chapter</h1>
+    <h1>{{ chapter.title }}</h1>
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/{{chapter.video.url}}"
+      frameborder="0" allowfullscreen></iframe>
+    <p>{{ chapter.content }}</p>
+    {{#each chapter.exercises}}
+        {{> exerciseItem}}
+    {{/each}}
+</template>
+
+<template name="exerciseItem">
+    <h3>{{ title }}</h3>
+    <p>{{ body }}</p>
+    <p>{{ result }}</p>
 </template>

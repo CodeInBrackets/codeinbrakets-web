@@ -9,6 +9,6 @@ Template.chapter.onCreated(function(){
 Template.chapter.helpers({
   chapter: () => {
     var id = FlowRouter.getParam('id');
-    return Videos.findOne({_id: id});
+    return Chapters.findOne({_id: id});
   }
 });

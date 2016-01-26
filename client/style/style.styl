@@ -99,3 +99,129 @@ header
         left auto
         a
             color dark-purp
+
+.new-chapter-container
+    position relative
+    background #FFF
+    padding 20px
+    margin-bottom 20px
+    shadow-level(2)
+    .fa-close
+        position absolute
+        top 0
+        right 0
+        padding 20px
+    label
+        display block
+        margin-bottom 10px
+    textarea, input
+        width 100%
+
+.btn, button
+    display inline-block
+    cursor pointer
+    background purp
+    color #FFF
+    text-decoration none
+    text-transform uppercase
+    padding 5px 15px
+    border solid 3px purp
+    border-radius 2px
+    font-weight 800
+    shadow-level(1)
+    trans()
+    &:hover
+        background @background - 20
+        border-color @background
+        shadow-level(2)
+    &.btn-primary
+        background teal
+        border-color teal
+        color dark-purp
+        &:hover
+            background @background - 40
+            border-color @background
+    &.btn-deny
+        background red
+        border solid 3px @background
+        &:hover
+            background @background - 20
+            border-color @background
+    &.btn-text
+        color purp
+        background transparent
+        border solid 2px purp
+        shadow-level(0)
+        &:hover
+            background teal
+            border-color @background
+            shadow-level(1)
+    &.btn-text-dark
+        color #FFF
+        background transparent
+        border solid 2px #FFF
+        shadow-level(0)
+        &:hover
+            background #FFF
+            color dark-purp
+            border-color @background
+            shadow-level(1)
+    &.btn-confirmation
+        color black
+        background green
+        border solid 2px @background
+        &:hover
+            background @background - 20
+            border-color dark-purp
+    &.btn-cancel
+        color #FFF
+        background transparent
+        border solid 2px #FFF
+        opacity 0.4
+        shadow-level(-1)
+        &:hover
+            background red
+            color #FFF
+            opacity 1
+            shadow-level(2)
+            border-color @background
+
+input, select, textarea
+    color purp
+    background #FFF
+    border solid 2px light-grey
+    border-radius 2px
+    font-weight 800
+    width 100%
+    padding 6px 10px
+    margin-bottom 10px
+    &.static-input
+        border none
+        background transparent
+
+.list-group
+    list-style none
+    padding 0
+
+.autoform-remove-item.btn
+    background light-grey
+    box-shadow none
+    border none
+    border-radius 50%
+    font-size 1em
+    height: 25px
+    width: 25px
+    text-align: center
+    display: block
+    padding: 0
+
+.autoform-add-item.btn
+    width 100%
+    border-radius 0
+    border none
+    box-shadow none
+    background light-grey
+
+
+.autoform-remove-item-wrap
+    vertical-align middle
