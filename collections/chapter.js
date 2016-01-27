@@ -16,7 +16,10 @@ ExerciseSchema = new SimpleSchema({
     },
     body: {
         type: String,
-        label: "Enunciate"
+        label: "Enunciate",
+        autoform: {
+            rows: 10
+         }
     },
     result: {
         type: String,

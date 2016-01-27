@@ -11,6 +11,6 @@
 
 <template name="exerciseItem">
     <h3>{{ title }}</h3>
-    <p>{{ body }}</p>
-    <p>{{ result }}</p>
+    {{#markdown}}{{ body }}{{/markdown}}
+    {{#markdown}}{{ result }}{{/markdown}}
 </template>
