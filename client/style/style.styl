@@ -100,7 +100,7 @@ header
         a
             color dark-purp
 
-.new-chapter-container
+.new-chapter-container, .chapter-body
     position relative
     background #FFF
     padding 20px
@@ -185,6 +185,41 @@ header
             opacity 1
             shadow-level(2)
             border-color @background
+
+.chapter-body
+    background #FFF
+    margin 30px
+    position relative
+    z-index 1
+    shadow-level(1)
+    trans()
+    h3
+        font-size: 3em;
+        opacity: 0.3;
+        border-bottom: rgba(0,0,0, 0.3) solid 3px
+        margin-top 0
+        margin-bottom 10px
+    h4
+        font-size: 1.5em;
+        opacity: 0.3;
+        border-bottom: rgba(0,0,0, 0.3) solid 3px
+        margin-top 0
+        margin-bottom 10px
+    .chapter-exercise
+        display inline-block
+        margin-right 10px
+        font-size 1.2em
+    .video
+        display: block
+        margin-left: auto
+        margin-right: auto
+    &:hover
+        shadow-level(3)
+
+.bordered
+    shadow-level(1)
+    &:hover
+        shadow-level(3)
 
 input, select, textarea
     color purp
