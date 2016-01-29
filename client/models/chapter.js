@@ -12,3 +12,22 @@ Template.chapter.helpers({
     return Chapters.findOne({_id: id});
   }
 });
+
+Template.exerciseItem.helpers({
+
+    editorOptions: function() {
+        return {
+            lineNumbers: true,
+            theme: "base16-dark",
+            mode: "javascript",
+            lint: CodeMirror.lint.javascript,
+            fullScreen: false,
+            extraKeys: {
+                /*key binding for toggle full screen on/off
+                F11: function(cm) {
+                    console.log('fullScreen var is ' + cm.getOption("fullScreen"));
+                }*/
+            }
+        };
+    }
+});

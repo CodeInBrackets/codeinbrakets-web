@@ -14,7 +14,9 @@
 <template name="exerciseItem">
     <div class="chapter-exercise">
         <h4>{{ title }}</h4>
-        <div class="bordered">{{#markdown}}{{ body }}{{/markdown}}</div>
-        <div class="bordered">{{#markdown}}{{ result }}{{/markdown}}</div>
+        {{> CodeMirror options=editorOptions code=body}}
+        {{> CodeMirror options=editorOptions code=result}}
+        <!--<div class="bordered">{{#markdown}}{{ body }}{{/markdown}}</div>
+        <div class="bordered">{{#markdown}}{{ result }}{{/markdown}}</div>-->
     </div>
 </template>
