@@ -9,49 +9,25 @@ Chapters.allow({
   }
 });
 
-ExerciseSchema = new SimpleSchema({
-    title: {
-        type: String,
-        label: "Title"
-    },
-    body: {
-        type: String,
-        label: "Enunciate",
-        autoform: {
-            rows: 10
-         }
-    },
-    result: {
-        type: String,
-        label: "Result"
-    }
-});
-
 VideoSchema = new SimpleSchema({
-    url: {
+    youtube: {
         type: String,
-        label: "URL"
+        label: "YoutubeID"
     }
 });
 
 ChapterSchema = new SimpleSchema({
-    title: {
+    name: {
         type: String,
-        label: "Title"
+        label: "Name"
     },
-    content: {
+    description:{
         type: String,
-        label: "Content"
+        label: "Description"
     },
-    exercises: {
-        type: [ExerciseSchema],
-        label: "Exercises",
-        optional: true
-    },
-    video: {
+    url: {
         type: VideoSchema,
-        label: "Video",
-        optional: true
+        label: "Video"
     },
     createdAt: {
         type: Date,
@@ -74,3 +50,41 @@ ChapterSchema = new SimpleSchema({
 });
 
 Chapters.attachSchema(ChapterSchema);
+
+Playlists = new Mongo.Collection('playlists');
+
+Playlists.allow({
+  insert: function(userId, doc) {
+    return !!userId;
+  },
+  update: function(userId, doc) {
+    return !!userId;
+  }
+});
+
+PlaylistSchema = new SimpleSchema({
+    chapters: {
+        type: [Chapters],
+        label: "Chapters"
+    },
+    createdAt: {
+        type: Date,
+        label: "Created At",
+        autoValue: function(){
+          return new Date();
+        },
+        autoform:{
+          type: "hidden"
+        }
+    },
+    isPublic: {
+        type: Boolean,
+        defaultValue: true,
+        optional: true,
+        autoform:{
+          type: "hidden"
+        }
+    }
+});
+
+Playlists.attachSchema(PlaylistSchema);
