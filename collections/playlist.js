@@ -1,4 +1,4 @@
-/*Playlists = new Mongo.Collection('playlists');
+Playlists = new Mongo.Collection('playlists');
 
 Playlists.allow({
   insert: function(userId, doc) {
@@ -9,9 +9,39 @@ Playlists.allow({
   }
 });
 
+VideoSchema = new SimpleSchema({
+    youtube: {
+        type: String,
+        label: "YoutubeID"
+    }
+});
+
+ChapterSchema = new SimpleSchema({
+    name: {
+        type: String,
+        label: "Name"
+    },
+    description:{
+        type: String,
+        label: "Description"
+    },
+    video: {
+        type: VideoSchema,
+        label: "Video"
+    }
+});
+
 PlaylistSchema = new SimpleSchema({
+    name: {
+        type: String,
+        label: "Name"
+    },
+    description:{
+        type: String,
+        label: "Description"
+    },
     chapters: {
-        type: [Chapters.schema],
+        type: [ChapterSchema],
         label: "Chapters"
     },
     createdAt: {
@@ -26,8 +56,7 @@ PlaylistSchema = new SimpleSchema({
     },
     isPublic: {
         type: Boolean,
-        defaultValue: true,
-        optional: true,
+        defaultValue: false,
         autoform:{
           type: "hidden"
         }
@@ -35,4 +64,3 @@ PlaylistSchema = new SimpleSchema({
 });
 
 Playlists.attachSchema(PlaylistSchema);
-*/

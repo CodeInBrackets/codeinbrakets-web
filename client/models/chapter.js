@@ -2,32 +2,14 @@ Template.chapter.onCreated(function(){
   var self = this;
   self.autorun(function(){
     var id = FlowRouter.getParam('id');
-    self.subscribe('chapter', id);
+    self.subscribe('playlist', id);
   });
 });
 
 Template.chapter.helpers({
-  chapter: () => {
+  chapters: () => {
     var id = FlowRouter.getParam('id');
-    return Chapters.findOne({_id: id});
+    var name = FlowRouter.getParam('name');
+    return Playlists.findOne({_id: id, 'chapters.name': name}, {_id: 0, 'chapters.$': 1});
   }
-});
-
-Template.exerciseItem.helpers({
-
-    editorOptions: function() {
-        return {
-            lineNumbers: true,
-            theme: "base16-dark",
-            mode: "javascript",
-            lint: CodeMirror.lint.javascript,
-            fullScreen: false,
-            extraKeys: {
-                /*key binding for toggle full screen on/off
-                F11: function(cm) {
-                    console.log('fullScreen var is ' + cm.getOption("fullScreen"));
-                }*/
-            }
-        };
-    }
 });

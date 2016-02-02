@@ -1,22 +1,9 @@
 <template name="chapter">
     <div class="chapter-body">
-        <h3>{{ chapter.title }}</h3>
+        <h3>{{ chapters.name }}</h3>
         <iframe width="560" height="315" class="video"
-          src="https://www.youtube.com/embed/{{chapter.video.url}}"
+          src="https://www.youtube.com/embed/{{chapters.video.youtube}}"
           frameborder="0" allowfullscreen></iframe>
         <p>{{ chapter.content }}</p>
-        {{#each chapter.exercises}}
-            {{> exerciseItem}}
-        {{/each}}
-    </div>
-</template>
-
-<template name="exerciseItem">
-    <div class="chapter-exercise">
-        <h4>{{ title }}</h4>
-        {{> CodeMirror options=editorOptions code=body}}
-        {{> CodeMirror options=editorOptions code=result}}
-        <!--<div class="bordered">{{#markdown}}{{ body }}{{/markdown}}</div>
-        <div class="bordered">{{#markdown}}{{ result }}{{/markdown}}</div>-->
     </div>
 </template>

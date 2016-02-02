@@ -14,7 +14,15 @@ FlowRouter.route('/admin',
   }
 });
 
-FlowRouter.route('/chapter/:id',
+FlowRouter.route('/:id',
+{
+  name: 'playlist',
+  action(){
+    BlazeLayout.render('main', {main: 'playlist'});
+  }
+});
+
+FlowRouter.route('/:id/:name',
 {
   name: 'chapter',
   action(){
