@@ -21,6 +21,10 @@ ChapterSchema = new SimpleSchema({
         type: String,
         label: "Name"
     },
+    tldr:{
+        type: String,
+        label: "TL;DR;"
+    },
     description:{
         type: String,
         label: "Description"
