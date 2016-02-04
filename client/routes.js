@@ -14,7 +14,7 @@ FlowRouter.route('/admin',
   }
 });
 
-FlowRouter.route('/:id',
+FlowRouter.route('/playlist/:id',
 {
   name: 'playlist',
   action(){
@@ -22,7 +22,7 @@ FlowRouter.route('/:id',
   }
 });
 
-FlowRouter.route('/:id/:name',
+FlowRouter.route('/chapter/:id/:name',
 {
   name: 'chapter',
   action(){

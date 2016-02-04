@@ -1,0 +1,13 @@
+<template name="playlist">
+    {{#each playlist.chapters}}
+        {{> PlaylistItem}}
+    {{else}}
+        <h3>No current videos on this playlist</h3>
+    {{/each}}
+</template>
+
+<template name="PlaylistItem">
+    <div class="chapter-body">
+        <h1>{{ name }}</h1>
+    </div>
+</template>
