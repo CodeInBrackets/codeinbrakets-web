@@ -120,14 +120,15 @@ header
 .btn, button
     display inline-block
     cursor pointer
-    background purp
+    background gray-blue
     color #FFF
     text-decoration none
     text-transform uppercase
     padding 5px 15px
-    border solid 3px purp
+    border solid 3px gray-blue
     border-radius 2px
     font-weight 800
+    margin 20px
     shadow-level(1)
     trans()
     &:hover
@@ -135,9 +136,8 @@ header
         border-color @background
         shadow-level(2)
     &.btn-primary
-        background teal
-        border-color teal
-        color dark-purp
+        background gray-blue
+        border-color gray-blue
         &:hover
             background @background - 40
             border-color @background
@@ -148,9 +148,9 @@ header
             background @background - 20
             border-color @background
     &.btn-text
-        color purp
+        color #FFF
         background transparent
-        border solid 2px purp
+        border solid 2px #FFF
         shadow-level(0)
         &:hover
             background teal
@@ -167,7 +167,7 @@ header
             border-color @background
             shadow-level(1)
     &.btn-confirmation
-        color black
+        color #FFF
         background green
         border solid 2px @background
         &:hover
