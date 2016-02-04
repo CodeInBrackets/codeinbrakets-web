@@ -1,4 +1,40 @@
 <template name="admin">
-    <h1>Admin</h1>
-    {{> newPlaylist}}
+    {{#if $.Session.get 'ShowNewPlaylist'}}
+        {{> newPlaylist}}
+    {{else}}
+        <button class="new-playlist">New Playlist</button>
+    {{/if}}
+    <section class="videos">
+        {{#if Template.subscriptionsReady}}
+          {{#each playlists}}
+            {{> Playlists}}
+          {{/each}}
+        {{else}}
+          <p>Loading...</p>
+        {{/if}}
+    </section>
+</template>
+
+<template name="newPlaylist">
+  <div class="new-playlist-container">
+      <i class="fa fa-close"></i>
+    {{> quickForm collection="Playlists" id="insertPlaylist" type="insert" class="new-playlist-form"}}
+  </div>
+</template>
+
+<template name="Playlists">
+  <article class="playlist {{#if isPublic}}is-publish{{/if}}">
+    <h3>{{name}}</h3>
+    <i class="fa fa-pencil"></i>
+    <i class="fa fa-trash"></i>
+    {{#if editMode}}
+      {{> quickForm collection="Playlists" id=updatePlaylistId type="update" doc=this autosave=true}}
+    {{else}}
+      {{#if isPublic}}
+        <button class="btn-deny toggle-menu">Unpublish</button>
+      {{else}}
+        <button class="btn-primary toggle-menu">Publish</button>
+      {{/if}}
+    {{/if}}
+  </article>
 </template>
