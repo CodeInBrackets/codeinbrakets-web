@@ -2,6 +2,10 @@ Meteor.publish('playlists', function(){
   return Playlists.find({});
 });
 
+Meteor.publish('publishedPlaylists', function(){
+  return Playlists.find({isPublic: true});
+});
+
 Meteor.publish('playlist', function(id){
   check(id,String);
   return Playlists.find({_id: id});

@@ -1,0 +1,14 @@
+<template name="publishedPlaylists">
+    {{#each playlists}}
+      <article class="playlist">
+        <h3>{{name}}</h3>
+        <p>{{ description }}</p>
+          <h1>Chapters:</h1>
+          <ol type="1">
+              {{#each chapters}}
+                <li>{{name}}: {{tldr}}</li>
+              {{/each}}
+          </ol>
+      </article>
+     {{/each}}
+</template>

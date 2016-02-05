@@ -31,6 +31,14 @@ FlowRouter.route('/admin',
   }
 });
 
+FlowRouter.route('/playlists',
+{
+  name: 'playlists',
+  action(){
+    BlazeLayout.render('main', {main: 'publishedPlaylists'});
+  }
+});
+
 FlowRouter.route('/playlist/:id',
 {
   name: 'playlist',
