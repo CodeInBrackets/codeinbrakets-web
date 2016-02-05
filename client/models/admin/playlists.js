@@ -1,3 +1,7 @@
+Template.Playlists.onCreated(function() {
+  this.editMode = new ReactiveVar(false);
+});
+
 Template.Playlists.events({
   'click .toggle-menu': function() {
     Meteor.call('togglePlaylistPublish', this._id, this.isPublic);

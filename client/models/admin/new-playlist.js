@@ -3,7 +3,3 @@ Template.newPlaylist.events({
     Session.set('ShowNewPlaylist', false);
   }
 });
-
-Template.Playlists.onCreated(function() {
-  this.editMode = new ReactiveVar(false);
-});

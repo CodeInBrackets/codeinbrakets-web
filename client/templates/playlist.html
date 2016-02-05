@@ -8,6 +8,14 @@
 
 <template name="PlaylistItem">
     <div class="chapter-body">
-        <h1>{{ name }}</h1>
+        <div class="chapter-header">
+            <h3>{{name}}</h3>
+        </div>
+        {{#if detailView}}
+            <p>{{ description }}</p>
+            <a href="/chapter/{{playilistid}}/{{name}}">View Chapter</a>
+        {{else}}
+            <p>{{ tldr }}</p>
+         {{/if}}
     </div>
 </template>

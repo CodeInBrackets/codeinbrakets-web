@@ -10,3 +10,22 @@ Template.publishedPlaylists.helpers({
     return Playlists.find({});
   }
 });
+
+
+
+Template.publishedPlaylist.onCreated(function() {
+  this.detailView = new ReactiveVar(false);
+});
+
+Template.publishedPlaylist.events({
+  'click .playlist': function(event, template) {
+    console.log(template.detailView.get());
+    template.detailView.set(!template.detailView.get());
+  }
+});
+
+Template.publishedPlaylist.helpers({
+  detailView: function() {
+    return Template.instance().detailView.get();
+  }
+});

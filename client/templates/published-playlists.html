@@ -1,14 +1,23 @@
 <template name="publishedPlaylists">
     {{#each playlists}}
+        {{> publishedPlaylist }}
+    {{/each}}
+</template>
+
+<template name="publishedPlaylist">
       <article class="playlist">
-        <h3>{{name}}</h3>
-        <p>{{ description }}</p>
-          <h1>Chapters:</h1>
-          <ol type="1">
+        <div class="paylist-header">
+            <h3>{{name}}</h3>
+        </div>
+        {{#if detailView}}
+            <p>{{ description }}</p>
+            <h1>Chapters:</h1>
+            <ol type="1">
               {{#each chapters}}
-                <li>{{name}}: {{tldr}}</li>
+                <li>{{name}}: {{tldr}} <!--<a href="/chapter/{{_id}}/{{name}}">View Chapter</a> Not working because _id is undefined--></li>
               {{/each}}
-          </ol>
+            </ol>
+            <a href="/playlist/{{_id}}">View Details</a>
+         {{/if}}
       </article>
-     {{/each}}
 </template>
