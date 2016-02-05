@@ -1,0 +1,24 @@
+<template name="Playlists">
+  <article class="playlist {{#if isPublic}}is-publish{{/if}}">
+    <h3>{{name}}</h3>
+    <i class="fa fa-pencil"></i>
+    <i class="fa fa-trash"></i>
+    {{#if editMode}}
+      {{> quickForm collection="Playlists" id=updatePlaylistId type="update" doc=this autosave=true}}
+    {{else}}
+      <p>{{ description }}</p>
+
+      <h1>Chapters:</h1>
+      <ol type="1">
+          {{#each chapters}}
+            <li>{{name}}: {{tldr}}</li>
+          {{/each}}
+      </ol>
+      {{#if isPublic}}
+        <button class="btn-deny toggle-menu">Unpublish</button>
+      {{else}}
+        <button class="btn-primary toggle-menu">Publish</button>
+      {{/if}}
+    {{/if}}
+  </article>
+</template>

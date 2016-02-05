@@ -1,3 +1,17 @@
+/*Accounts.onLogin(function(){
+  FlowRouter.go('video-list')
+});*/
+
+Accounts.onLogout(function(){
+  FlowRouter.go('home');
+});
+
+/*FlowRouter.triggers.enter([function(context, redirect){
+  if(!Meteor.userId()){
+    FlowRouter.go('home');
+  }
+}]);*/
+
 FlowRouter.route('/',
 {
   name: 'home',
@@ -10,6 +24,9 @@ FlowRouter.route('/admin',
 {
   name: 'admin',
   action(){
+    if(!Meteor.userId()){
+      FlowRouter.go('home');
+    }
     BlazeLayout.render('main', {main: 'admin'});
   }
 });
