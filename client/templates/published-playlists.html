@@ -1,6 +1,8 @@
 <template name="publishedPlaylists">
     {{#each playlists}}
         {{> publishedPlaylist }}
+    {{else}}
+        <h3>No current public videos...Please be patient while we generate content for this web</h3>
     {{/each}}
 </template>
 

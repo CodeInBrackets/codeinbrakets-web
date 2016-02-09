@@ -1,8 +1,13 @@
 <template name="header">
   <header>
     <div class="title">
-      <img src="/images/logo.png">
+      <a href="/"><img src="/images/logo.png"></a>
     </div>
     {{> loginButtons}}
+    <div class="menu">
+      <a href="/"><h3>Home</h3></a>
+      <a href="/playlists"><h3>Playlists</h3></a>
+      <a href="/about"><h3>About</h3></a>
+    </div>
   </header>
 </template>

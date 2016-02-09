@@ -1,19 +1,19 @@
 <template name="playlist">
     {{#each playlist.chapters}}
-        {{> PlaylistItem}}
+        {{> playlistItem this idPlaylist=../playlist._id}}
     {{else}}
         <h3>No current videos on this playlist</h3>
     {{/each}}
 </template>
 
-<template name="PlaylistItem">
+<template name="playlistItem">
     <div class="chapter-body">
         <div class="chapter-header">
             <h3>{{name}}</h3>
         </div>
         {{#if detailView}}
             <p>{{ description }}</p>
-            <a href="/chapter/{{playilistid}}/{{name}}">View Chapter</a>
+            <a href="/chapter/{{playlistId}}/{{name}}">View Chapter</a>
         {{else}}
             <p>{{ tldr }}</p>
          {{/if}}
