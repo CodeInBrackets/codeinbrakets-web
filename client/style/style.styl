@@ -70,6 +70,30 @@ body
     background: light-grey
     padding: 70px 0 150px
 
+footer
+    color: #FFF
+    background: gray-blue
+    padding: 10px
+    fixed: bottom left
+    width: 100%
+    height: 70px
+    z-index: z.header
+    shadow-level(2)
+    clearfix()
+    .login-buttons-dropdown-align-
+        float: right
+        a
+            color: #FFF
+            text-decoration: none
+.login-buttons-dropdown-align-
+    #login-dropdown-list
+        right 0
+        left auto
+        bottom 0
+        top auto
+        a
+            color dark-purp
+
 header
     color: #FFF
     background: gray-blue
@@ -88,7 +112,6 @@ header
             height:50px
             float: center
     .menu
-        margin: 0 100px 100px 100px
         float: right
         a
             float: left
@@ -98,18 +121,6 @@ header
             float: center
             &:hover
                 text-decoration: underline
-    .login-buttons-dropdown-align-
-        float: right
-        a
-            color: #FFF
-            text-decoration: none
-
-.login-buttons-dropdown-align-
-    #login-dropdown-list
-        right 0
-        left auto
-        a
-            color dark-purp
 .landing
     Height: 600px
     background-color: gray-blue + 10;
